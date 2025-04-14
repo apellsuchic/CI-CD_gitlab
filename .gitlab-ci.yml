@@ -1,4 +1,10 @@
-build:
+stages:
+  - build
+
+job_build:
+  stage: build
+  tags:
+    - build
   script:
     - echo Sasha
     - echo hurt
