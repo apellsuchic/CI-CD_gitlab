@@ -3,5 +3,7 @@ stages:
 
 build_project:
   stage: build
+  tags:
+    - build
   script:
     - sudo apt install gcc
