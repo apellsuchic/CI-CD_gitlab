@@ -1,10 +1,7 @@
 stages:
   - build
 
-job_build:
+build_project:
   stage: build
-  tags:
-    - build
   script:
-    - echo Sasha
-    - echo hurt
+    - sudo apt install gcc
