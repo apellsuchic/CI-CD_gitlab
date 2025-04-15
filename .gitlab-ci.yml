@@ -6,4 +6,4 @@ build_project:
   tags:
     - build
   script:
-    - sudo apt install gcc
+    - cd src/grep && make s21_grep
