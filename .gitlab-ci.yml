@@ -17,7 +17,7 @@ build_project:
       - src/
 
 test-style_project:
-  stage: test_style
+  stage: style
   tags:
     - style
   script:
