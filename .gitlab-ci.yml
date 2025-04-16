@@ -6,4 +6,7 @@ build_project:
   tags:
     - build
   script:
-    - ls
+    - cd src/grep
+    - make s21_grep
+    - cd ../cat
+    - make s21_cat
