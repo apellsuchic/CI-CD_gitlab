@@ -15,7 +15,7 @@ build_project:
   artifacts:
     expire_in: "30 days"
     paths:
-      - src/
+      - src/build/
 
 test-style_project:
   stage: style
@@ -34,4 +34,10 @@ test_project:
     - cd src/grep && make test
     - cd ../cat && make test
 
-    
+deploy_project:
+  stage: deploy
+  tags:
+    - deploy
+  script:
+    - ./script.sh
+  when: manual
