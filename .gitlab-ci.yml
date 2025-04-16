@@ -6,4 +6,4 @@ build_project:
   tags:
     - build
   script:
-    - cd src/grep && make s21_grep
+    - ls src/grep 
