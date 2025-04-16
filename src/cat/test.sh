@@ -242,6 +242,10 @@ else
 	((failed++))
 fi
 
+if [[ $i -lt 14 ]]; then
+	exit 1
+fi
+
 printf " ${GREEN}-----DONE[$((i - failed))/$((i))]-----${NC}\n"
 
 rm -f a.out a b s21_cat.h.gch
