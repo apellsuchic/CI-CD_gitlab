@@ -42,5 +42,5 @@ deploy_project:
   script:
     - set -e
 #    - ./src/script.sh
-    - ls ./src/build/
+    - ls src/build/
   when: manual
