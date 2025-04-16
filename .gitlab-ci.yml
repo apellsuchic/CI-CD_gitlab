@@ -3,6 +3,7 @@
 stages:
   - build
   - style
+  - test
 
 build_project:
   stage: build
@@ -24,4 +25,13 @@ test-style_project:
     - cd src/
     - clang-format -n -Werror grep/s21_grep.*
     - clang-format -n -Werror cat/s21_cat.*
+
+test_project:
+  stage: test
+  tags:
+    - test
+  script:
+    - cd src/grep && make test
+    - cd ../cat && make test
+
     
