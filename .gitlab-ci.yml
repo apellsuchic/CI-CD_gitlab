@@ -16,7 +16,7 @@ build_project:
   artifacts:
     expire_in: "30 days"
     paths:
-      - "../build/"
+      - "build/"
 
 test-style_project:
   stage: style
