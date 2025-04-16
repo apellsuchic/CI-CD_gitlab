@@ -11,12 +11,12 @@ build_project:
   tags:
     - build
   script:
-    - cd src/grep && make s21_grep
-    - cd ../cat && make s21_cat
+    - cd src/grep && make s21_grep && mv s21_grep ../build
+    - cd ../cat && make s21_cat && mv s21_cat ../build
   artifacts:
     expire_in: "30 days"
     paths:
-      - "src/"
+      - "src/build/"
 
 test-style_project:
   stage: style
