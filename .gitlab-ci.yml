@@ -24,7 +24,7 @@ test-style_project:
     - style
   script:
     - cd src/
-    - ls cat/
+    - ls build/
     - ls grep/
     - clang-format -n -Werror grep/s21_grep.*
     - clang-format -n -Werror cat/s21_cat.*
