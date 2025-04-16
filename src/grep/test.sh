@@ -306,11 +306,10 @@ result=$(diff a b)
 
 if [ $? == 0 ]; then
 	printf " TEST #$i ${GREEN}PASSED${NC}\n"
-	((failed++))
 else
 	printf " TEST #$i ${RED}FAILED${NC}\n"
 	printf "$result"
-	#((failed++))
+	((failed++))
 fi
 
 printf " ${GREEN}-----DONE[$((i - failed))/$((i))]-----${NC}\n"
