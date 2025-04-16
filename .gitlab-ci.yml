@@ -6,4 +6,4 @@ build_project:
   tags:
     - build
   script:
-    - ls src/grep 
+    - ls
