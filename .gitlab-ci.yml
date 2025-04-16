@@ -41,5 +41,6 @@ deploy_project:
     - deploy
   script:
 #    - ./src/script.sh
-    - ls src/build
+    - ls src/cat
+    - ls src/grep
   when: manual
