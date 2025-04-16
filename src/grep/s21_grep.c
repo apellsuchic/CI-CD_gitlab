@@ -2,7 +2,7 @@
 
 int main(int argc, char *argv[]) {
   struct Opt opt;
-  memset(&opt, 0, sizeof(opt));
+  memset(&opt, 0, sizeof(opt)); 
   parser(argc, argv, &opt);
   if (!opt.e) {
     work_with_arg(argc, argv, &opt);
