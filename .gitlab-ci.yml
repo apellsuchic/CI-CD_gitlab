@@ -40,6 +40,6 @@ deploy_project:
   tags:
     - deploy
   script:
-    - scp -r scp -r src/build/s21_cat adm-dev@10.1.30.37:/etc/
+    - set -e
     - ./src/script.sh
   when: manual
