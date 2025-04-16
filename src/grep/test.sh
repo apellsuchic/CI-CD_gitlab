@@ -312,10 +312,11 @@ else
 	printf "$result"
 	#((failed++))
 fi
-if [[ $i -lt 18 ]]; then
-	exit 1
-fi
 
 printf " ${GREEN}-----DONE[$((i - failed))/$((i))]-----${NC}\n"
 
 rm -f a.out a b s21_grep.h.gch
+
+if [[ $failed -ge 1 ]]; then
+	exit 1
+fi
