@@ -1,4 +1,4 @@
-#build, test, style, deploy, bot
+#build, test, style, deploy, bot #
 
 stages:
   - build
