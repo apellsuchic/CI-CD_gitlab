@@ -11,8 +11,8 @@ build_project:
   tags:
     - build
   script:
-    - cd src/grep && make s21_grep && cp s21_grep ../build
-    - cd ../cat && make s21_cat && cp s21_cat ../build
+    - cd src/grep && make s21_grep && mv s21_grep ../build
+    - cd ../cat && make s21_cat && mv s21_cat ../build
   artifacts:
     expire_in: "30 days"
     paths:
@@ -24,8 +24,6 @@ test-style_project:
     - style
   script:
     - cd src/
-    - ls build/
-    - ls grep/
     - clang-format -n -Werror grep/s21_grep.*
     - clang-format -n -Werror cat/s21_cat.*
 
