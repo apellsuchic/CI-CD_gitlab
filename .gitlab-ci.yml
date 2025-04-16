@@ -21,4 +21,7 @@ test-style_project:
   tags:
     - style
   script:
-    - ls
+    - cp materials/linters/.clang-format src/ && cd src/
+    - clang-format -n grep/s21_grep.*
+    - clang-format -n cat/s21_cat.*
+    
