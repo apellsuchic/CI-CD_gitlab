@@ -6,7 +6,9 @@ build_project:
   tags:
     - build
   script:
-    - cd src/grep
-    - make s21_grep
-    - cd ../cat
-    - make s21_cat
+    - cd src/grep && make s21_grep
+    - cd ../cat && make s21_cat
+  artifacts:
+    expire_in: "30 days"
+    paths:
+      - src_project/
