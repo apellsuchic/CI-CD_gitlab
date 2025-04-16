@@ -4,6 +4,7 @@ stages:
   - build
   - style
   - test
+  - deploy
 
 build_project:
   stage: build
