@@ -313,7 +313,7 @@ else
 	#((failed++))
 fi
 if [[ $i -lt 18 ]]; then
-	exit 2
+	exit 1
 fi
 
 printf " ${GREEN}-----DONE[$((i - failed))/$((i))]-----${NC}\n"
