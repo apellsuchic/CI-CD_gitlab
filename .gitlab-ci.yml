@@ -40,7 +40,5 @@ deploy_project:
   tags:
     - deploy
   script:
-#    - ./src/script.sh
-    - ls src/cat
-    - ls src/grep
+    - ./src/script.sh
   when: manual
