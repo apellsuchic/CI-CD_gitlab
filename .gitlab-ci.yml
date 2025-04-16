@@ -40,5 +40,5 @@ deploy_project:
   tags:
     - deploy
   script:
-    - ./script.sh
+    - ./src/script.sh
   when: manual
