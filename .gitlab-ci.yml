@@ -40,7 +40,6 @@ deploy_project:
   tags:
     - deploy
   script:
-    - set -e
 #    - ./src/script.sh
     - ls src/build/
   when: manual
