@@ -7,7 +7,7 @@ stages:
 build_project:
   stage: build
   tags:
-    - build
+    - ubuntu
   script:
     - mkdir -p src/build/
     - cd src/grep && make s21_grep && mv s21_grep ../build
@@ -22,7 +22,7 @@ build_project:
 test-style_project:
   stage: style
   tags:
-    - style
+    - ubuntu
   script:
     - mv materials/linters/.clang-format ./src/
     - cd src/
@@ -34,7 +34,7 @@ test-style_project:
 test_project:
   stage: test
   tags:
-    - test
+    - ubuntu
   script:
     - cd src/grep && make test
     - cd ../cat && make test
@@ -44,7 +44,7 @@ test_project:
 deploy_project:
   stage: deploy
   tags:
-    - deploy
+    - ubuntu
   script:
     - ./src/scripts/script.sh
   after_script:
