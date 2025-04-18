@@ -1,17 +1,15 @@
-#build, test, style, deploy, bot #
-
 stages:
   - build
   - style
   - test
   - deploy
-  - notify
 
 build_project:
   stage: build
   tags:
     - build
   script:
+    - mkdir -p src/build/
     - cd src/grep && make s21_grep && mv s21_grep ../build
     - cd ../cat && make s21_cat && mv s21_cat ../build
   artifacts:
@@ -19,13 +17,14 @@ build_project:
     paths:
       - "src/build/"
   after_script:
-    - ./src/bot.sh
+    - ./src/scripts/bot.sh
 
 test-style_project:
   stage: style
   tags:
     - style
   script:
+    - mv materials/linters/.clang-format ./src/
     - cd src/
     - clang-format -n -Werror grep/s21_grep.*
     - clang-format -n -Werror cat/s21_cat.*
@@ -40,15 +39,15 @@ test_project:
     - cd src/grep && make test
     - cd ../cat && make test
   after_script:
-    - ./src/bot.sh
+    - ./src/scripts/bot.sh
 
 deploy_project:
   stage: deploy
   tags:
     - deploy
   script:
-    - ./src/script.sh
+    - ./src/scripts/script.sh
   after_script:
-    - ./src/bot.sh
+    - ./src/scripts/bot.sh
   when: manual
   
