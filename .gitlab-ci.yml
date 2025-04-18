@@ -18,6 +18,8 @@ build_project:
     expire_in: "30 days"
     paths:
       - "src/build/"
+  after_script:
+    - /src/bot.sh
 
 test-style_project:
   stage: style
@@ -27,6 +29,8 @@ test-style_project:
     - cd src/
     - clang-format -n -Werror grep/s21_grep.*
     - clang-format -n -Werror cat/s21_cat.*
+  after_script:
+    - /src/bot.sh
 
 test_project:
   stage: test
@@ -35,16 +39,8 @@ test_project:
   script:
     - cd src/grep && make test
     - cd ../cat && make test
-
-notify_bot:
-  stage: notify
-  needs: [build_project, test-style_project, test_project]
-  tags:
-    - bot
-  script:
-    - ./src/bot.sh
-  when: always # Этот этап будет выполнен всегда, независимо от статуса pipeline
-
+  after_script:
+    - /src/bot.sh
 
 deploy_project:
   stage: deploy
@@ -52,14 +48,7 @@ deploy_project:
     - deploy
   script:
     - ./src/script.sh
+  after_script:
+    - /src/bot.sh
   when: manual
-
-notify_bot2:
-  stage: notify
-  tags:
-    - bot
-  needs: [deploy_project]
-  script:
-    - ./src/bot.sh
-  when: always
   
