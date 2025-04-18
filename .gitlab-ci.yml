@@ -5,6 +5,7 @@ stages:
   - style
   - test
   - deploy
+  - notify
 
 build_project:
   stage: build
@@ -35,6 +36,15 @@ test_project:
     - cd src/grep && make test
     - cd ../cat && make test
 
+notify_bot:
+  stage: notify
+  tags:
+    - bot
+  script:
+    - ./src/bot.sh
+  when: always # Этот этап будет выполнен всегда, независимо от статуса pipeline
+
+
 deploy_project:
   stage: deploy
   tags:
@@ -42,3 +52,12 @@ deploy_project:
   script:
     - ./src/script.sh
   when: manual
+
+notify_bot2:
+  stage: notify
+  tags:
+    - bot
+  script:
+    - ./src/bot.sh
+  when: always
+  
