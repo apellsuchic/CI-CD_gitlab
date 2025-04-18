@@ -10,7 +10,9 @@ ID pipeline: $CI_PIPELINE_ID"
 
 URL="https://api.telegram.org/bot${BOT_TOKEN}/sendMessage"
 
-#curl -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
-#     -H "Content-Type: application/json" \
-#     -d "{\"chat_id\": \"${CHAT_ID}\", \"text\": \"${MESSAGE}\"}" >/dev/null
 curl -s -d  "chat_id=$CHAT_ID&disable_web_page_preview=1&text=$MESSAGE" $URL >/dev/null
+
+#-s: Отключение вывода дополнительной информации.
+#-d: Означает "data" (данные).
+#disable_web_page_preview=1: Отключает вывод html страницы.
+#Для передачи данных используется формат по умолчанию: URL-encoded
