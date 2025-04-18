@@ -38,7 +38,7 @@ test_project:
 
 notify_bot:
   stage: notify
-  needs: ["build_project, test-style_project, test_project"]
+  needs: [build_project, test-style_project, test_project]
   tags:
     - bot
   script:
@@ -58,7 +58,7 @@ notify_bot2:
   stage: notify
   tags:
     - bot
-  needs: ["deploy_project"]
+  needs: [deploy_project]
   script:
     - ./src/bot.sh
   when: always
