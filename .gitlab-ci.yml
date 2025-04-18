@@ -38,6 +38,7 @@ test_project:
 
 notify_bot:
   stage: notify
+  needs: ["build_project, test-style_project, test_project"]
   tags:
     - bot
   script:
