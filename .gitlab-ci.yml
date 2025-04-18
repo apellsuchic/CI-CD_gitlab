@@ -29,7 +29,7 @@ test-style_project:
     - clang-format -n -Werror grep/s21_grep.*
     - clang-format -n -Werror cat/s21_cat.*
   after_script:
-    - ./src/bot.sh
+    - ./src/scripts/bot.sh
 
 test_project:
   stage: test
