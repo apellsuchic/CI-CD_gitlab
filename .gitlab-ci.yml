@@ -57,6 +57,7 @@ notify_bot2:
   stage: notify
   tags:
     - bot
+  needs: ["deploy_project"]
   script:
     - ./src/bot.sh
   when: always
