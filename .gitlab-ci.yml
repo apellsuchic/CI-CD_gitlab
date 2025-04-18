@@ -19,7 +19,7 @@ build_project:
     paths:
       - "src/build/"
   after_script:
-    - /src/bot.sh
+    - ./src/bot.sh
 
 test-style_project:
   stage: style
@@ -30,7 +30,7 @@ test-style_project:
     - clang-format -n -Werror grep/s21_grep.*
     - clang-format -n -Werror cat/s21_cat.*
   after_script:
-    - /src/bot.sh
+    - ./src/bot.sh
 
 test_project:
   stage: test
@@ -40,7 +40,7 @@ test_project:
     - cd src/grep && make test
     - cd ../cat && make test
   after_script:
-    - /src/bot.sh
+    - ./src/bot.sh
 
 deploy_project:
   stage: deploy
@@ -49,6 +49,6 @@ deploy_project:
   script:
     - ./src/script.sh
   after_script:
-    - /src/bot.sh
+    - ./src/bot.sh
   when: manual
   
