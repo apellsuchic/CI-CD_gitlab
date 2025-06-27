@@ -4,8 +4,8 @@ int main(int argc, char *argv[]) {
   struct Opt opt;
   memset(&opt, 0, sizeof(opt));
   if (parser(argc, argv, &opt)) {
-    work_with_text(argc, argv, &opt); 
-  } 
+    work_with_text(argc, argv, &opt);
+  }
   return 0;
 }
 
